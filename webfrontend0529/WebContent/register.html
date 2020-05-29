@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body>
+	<h3 align="center">회원가입</h3>
+	<form action="server.jsp" method="post">
+		<table align="center"
+		cellpadding="10" width="700">
+		<tr>
+			<td rowspan="8" width="150">이미지<br/>
+			<img id="img" width="100" height="100" border="1"/>	
+			<input type="file" name="file" accept=".jpg,.gif,.png,.jpeg">
+			</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<label for="email">이메일</label>
+				</td>
+				<td>
+					<input type="text"
+						id="email" name="email"
+						size="40" placeholder="이메일을 입력하세요"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<label for="password">비밀번호</label>
+				</td>
+				<td>
+					<input type="password"
+						id="password" name="password"
+						size="15" maxlength="15" />
+						<div id="msg"></div>
+						
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<label for="password">비밀번호 확인</label>
+				</td>
+				<td>
+					<!-- 서버에게 전송하지 않으므로 name이 필요 없음 -->
+					<input type="password"
+						id="password1"
+						size="15" maxlength="15" />
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<label for="">성별</label>
+				</td>
+				<td>
+				<!-- 둘다 name이 gender라 구분이 안되기 때문에 홈페이지창에 보이지는 않고 시스템에서 구분 할 수 있게 value로 이름을 구분해준다. -->
+					<input type="radio" value="man"
+						name="gender" checked="checked"/>남자
+					<input type="radio" value="woman"
+						name="gender"/>여자
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+				<fieldset>
+					<legend>취미</legend>
+					<input type="checkbox"
+					name="hobby" value="sports"/>
+					운동
+					<input type="checkbox"
+					name="hobby" value="game"/>
+					게임
+				</fieldset>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<label for="">고향</label>
+				</td>
+				<td>
+					<select name="born" size="2"
+					multiple="multiple">
+					<!--년도(1900~현재)나 지역(전 지역)을 다적을 필요 없이 자바스크립트 같은것을 가지고 간편하게 만들 수 있음, 학습 중이기에 3개만 선생님이 적으면서 보여준것-->
+						<option value="s">서울</option>
+						<option value="k">경기도</option>
+						<option value="g">강원도</option>
+					</select>
+				</td>
+				
+				<tr>
+					<td>하고싶은 애기</td>
+					<td>
+						<textarea row="10" cols="30">
+						</textarea>
+					</td>
+				</tr>
+				
+				<tr>
+				<td colspan="3" align="center">
+				<input type="submit" value="회원가입"/>
+				<!-- submit은 서버로 보내주는것이고 reset은 clear시켜주는것  -->
+				<input type="reset" value="작성취소"/>
+				</td>
+				</tr>																		
+		</table>
+	</form>
+	
+	<script>
+		document.getElementById("registerform")
+			.addEventListener("submit", function(e){
+			var pw = document.getElementById("password").value;
+			var pw1 = document.getElementById("password1").value;
+			if(pw != pw1){
+				document.getElementById("msg")
+					.innerHTML = "2개의 비밀번호가 같아야 합니다.";
+				document.getElementById("msg")
+				.style.color = 'red';
+				e.preventDefault();
+			}
+		})
+	</script>
+</body>
+</html>
