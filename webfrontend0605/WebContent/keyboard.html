@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키보드 이벤트</title>
+
+<!-- style쪽은 어느곳에 있어도 가장 마지막에 읽혀 수행하는데 script는 순서대로 수행되기 때문에 에러가 났다.
+          이 떄 해결 방법은 script를 밑으로 보내거나 body의 내용을 전부 읽고 난 다음에 해주세요 하고 코드를 작성하면 된다.  -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+     <input size="40" placeholder="문자를 입력하세요" id="keyinput" />
+     <!-- class를 부여하는 이유는  -->
+     <div>
+         <span class="titlespan">which</span>
+         <span class="titlespan">code</span>
+         <span class="titlespan">key</span>
+      </div>
+      <div>
+         <span class="valuespan" id="whichsapn"></span>
+         <span class="valuespan" id="codespan"></span>
+         <span class="valuespan" id="keyspan"></span>
+      </div>
+      <script src="js/script.js"></script>
+</body>
+</html>
