@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax - 비동기적으로 서버로부터 데이터를 받아오기</title>
+</head>
+<body>
+    <div id="disp"></div>
+    <input type="button" value="ajax-text" id="txtbtn" />
+
+</body>
+
+<script>
+     //DOM 객체 찾아오기 
+     //innerHTML은 여는 태그와 닫는 태그 사이의 내용
+     //value는 input이나 textarea 그리고 select에서
+     //입력하거나 선택하거나 보이는 내용 
+     var disp = document.getElementById("disp");
+     var txtbtn = document.getElementById("txtbtn");
+     
+     //이벤트 처리 
+     txtbtn.addEventListener("click", function(event){
+    	 //ajax 객체 생성 
+    	 var request = new XMLHttpRequest();
+    	 //alert(request);
+    	 
+    	 //요청 경로 생성 
+    	 request.open('GET', 'data/data,txt');
+    	 //요청 전송
+    	 request.send('');
+    	 alert("요청 완료");
+     });
+     
+
+</script>
+</html>
