@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹 스토리지</title>
+</head>
+<body>
+     <fieldset>
+        <legend>웹 스토리지 이용</legend>
+        key<input type="text" id="k"/>
+        value<input type="text" id="v"/>
+        <input type="button" value="삽입" id="insertbtn" />
+        <input type="button" value="삭제" id="removebtn" />
+        <input type="button" value="윈도우추가" id="addwindow" />
+        </fieldset>
+        <fieldset>
+           <legend>데이터</legend>
+           <select id="list" size="10" multiple="multiple"/></select>
+        </fieldset>
+</body>
+
+<script>
+    //브라우저에 저장이 되서 브라우저를 종료했다가 다시 실행해서 동일한 도메인에 접속하면 데이터가 남아있는 저장소
+    //변수명을 작성시 고르기 힘들면 id와 같은 이름으로 해도 된다.
+    var k = document.getElementById("k");
+    var v = document.getElementById("v");
+    var insertbtn = document.getElementById("insertbtn");
+    var removebtn = document.getElementById("removebtn");
+    var list = document.getElementById("list");
+    
+  //세션 스토리지의 데이터를 출력하는 함수를 호출 
+    function show(){
+    	//세션 스토리지의 모든 내용을 list-select에 출력
+        //list의 내용을 초기화     
+        list.innerHTML = '';
+        //sessionStorage의 목록을 순회하면서 list에 출력 	        
+    for(var i=0; i<sessionStorage.length; i=i+1){
+    	var key = sessionStorage.key(i);
+    	//select에 option을 추가 
+    	//Option의 첫번째 매개변수는 출력되는 값
+    	//두번쨰 매개변수는 서버에게 전달되는 값 
+    	list.options[list.options.length] = new Option(key + ":" + sessionStorage[key], key);
+        }
+    }
+  //세션 스토리지의 데이터를 출력하는 함수를 호출 
+    show();
+    
+    var addwindow = document.getElementById("addwindow");
+    //addwindow 버튼을 누르면 현재 창을 복사해서 새로운 창을 생성 
+    addwindow.addEventListener('click', function(event){
+    	//현재 창을 복제해서 새로운 창을 생성 
+    	//세션을 복제해서 전달
+    	window.open(location.href);
+    });
+    
+    //insertbtn을 누르면 k와 v에 입력된 값을 webstorage에 Key와 Value로 설정해서 저장
+    insertbtn.addEventListener('click', function(event){
+    	//웹 스토리지에 저장
+    	//속성을 [속성]으로 사용 
+    	// K.value 시스템은 key가 중복 될수 없다. 즉 똑같은 키에 삽입하게 되면 고쳐진다.
+    	sessionStorage[k.value] = v.value;
+    	//localStorage[k.value]로 하면 localstorage에 sessionStorage로 하면 sessionStorage에 저장된다.
+    	//sessionStorage는 윈도우를 종료해버리면 localtorage와 다르게 내용이 남지 않고 삭제된다.
+    	k.value = '';
+    	v.value = '';
+    	//세션 스토리지의 데이터를 출력하는 함수를 호출 
+    	show();
+    });
+    
+    //삭제 버튼을 누르면 select에서 현재 선택한 항목을 삭제 
+    removebtn.addEventListener("click", function(event){
+    //select에서 현재 선택한 항목의 인덱스 가져오기 
+    //선택이 안된 상태이면 음수를 리턴
+
+    //var idx = list.selectedIndex; 선택한 항목 하나만 가져오는 코드 
+    
+    /*
+    if(idx < 0){
+    	alert("선택을 하고 지우세요");
+    }else{
+    	//선택한 항목의 값을 가져오기 
+    	var selectdata = list.options[idx];
+    	//가져온 항목의 값을 세션 스토리지에서 삭제 
+    	delete sessionStorage[selectdata.value];
+    	//다시출력
+    	show();
+     }
+    */
+    
+    var idx = list.selectedIndexes;
+    alert(idx);
+    });
+</script>
+</html>
