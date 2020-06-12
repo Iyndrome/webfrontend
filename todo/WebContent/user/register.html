@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>회원가입</title>
+<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+	<form method="post" action="server.jsp" id="registerform">
+		<h2>회원가입</h2>
+		<div align="center" id="msg"></div>
+		<ul>
+			<li>
+				<label for="email">이메일</label> 
+				<input type="text" id="email" name="email" class="textinput" placeholder="이메일 주소를 입력하세요" />
+			</li>
+			<li>
+				<label for="userpw">비밀번호</label> 
+				<input type="password" id="userpw" name="userpw" class="textinput" />
+			</li>
+			<li>
+				<label for="userpw1">비밀번호확인</label> 
+				<input type="password" id="userpw1" class="textinput" />
+			</li>
+
+			<li>
+				<label for="nickname">별명</label> 
+				<input type="text" id="nickname" class="textinput" />
+			</li>
+			<li>
+				<label for="myimage">이미지</label> 
+				<input type="file" id="myimage" class="fileinput" accept="image/*"/>
+				<img id="img" />
+			</li>
+
+						<li class="buttons">
+				<input type="submit" value="회원가입" /> 
+				<input type="button" value="메인" id="mainbtn" /> 
+				<input type="button" value="로그인" id="loginbtn" />
+			</li>
+		</ul>
+	</form>
+</body>
+<script src="js/register.js"></script>
+</html>
+			

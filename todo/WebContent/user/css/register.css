@@ -1,0 +1,160 @@
+ul {
+	list-style-type: none;
+}
+/* ul 태그 안에 있는 li */
+ul li {
+	clear: both;
+}
+form {
+	width: 50em;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-shadow: .2em .2em .5em #999;
+	background-color: #d0e9f6;
+	padding: 1em;
+	overflow: hidden;
+}
+label {
+	display: block;
+	float: left;
+	width: 10em;
+	text-align: right;
+	margin-right: .5em;
+	color: #04699d;
+}
+
+/* input 중에서 class 이름이 textinput */
+input.textinput {
+	width: 30em;
+	height: 2em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	display: block;
+	float: left;
+}
+input.fileinput {
+	width: 15em;
+	height: 2em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	margin-right: 1em;
+	display: block;
+	float: left;
+}
+
+img{
+	width: 7em;
+	height: 7em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+}
+textarea {
+	display: block;
+	width: 30em;
+	height: 5em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	line-height: 1.25;
+	overflow: auto;
+	resize: none;
+}
+
+/* input.textinput 과 textarea 에 적용 */
+input.textinput, textarea {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: .875em;
+}
+
+/*input 중에서 type이 submit 그리고 button 에 적용*/
+input[type="submit"], input[type="button"] {
+	display: block;
+	width: 10em;
+	height: 2em;
+	float: left;
+	background: white;
+	font-size: inherit;
+	border: 1px solid #04699d;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+	margin-top: 1em;
+	margin-right: 1em;
+	color: #C00;
+}
+
+input[type="submit"] {
+	margin-left: 5em;
+}
+
+/* id 가 msg 인 요소에 적용 */
+#msg {
+	color: red;
+}
+/* 스크린의 크기가 960px보다 작은 경우 적용 
+   이렇게 디바이스의 크기에 따라 다르게 디자인해서 
+   하나의 페이지를 가지고 여러 디바이스를 지원하는 것을 반응형 웹 이라고 합니다. */
+
+@media screen and (max-width: 960px) {
+	form {
+		width: 20em;
+		border: 1px solid #666;
+		border-radius: 10px;
+		box-shadow: .2em .2em .5em #999;
+		background-color: #d0e9f6;
+		padding: 1em;
+		overflow: hidden;
+	}
+	label {
+		display: block;
+		float: left;
+		width: 4em;
+		text-align: right;
+		margin-right: .5em;
+		color: #04699d;
+	}
+	input.textinput {
+		width: 13em;
+		height: 2em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+	}
+img{
+		width: 7em;
+		height: 7em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+		margin-left:5em;
+	}
+	textarea {
+		display: block;
+		width: 13em;
+		height: 5em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+		line-height: 1.25;
+		overflow: auto;
+		resize: none;
+	}
+	input.textinput, textarea {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: .875em;
+	}
+	
+input[type="submit"], input[type="button"] {
+		display: block;
+		width: 10em;
+		height: 2em;
+		float: left;
+		background: white;
+		font-size: inherit;
+		border: 1px solid #04699d;
+		border-radius: 4px;
+		box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+		margin-top: 1em;
+		color: #C00;
+		margin-left: 3em;
+	}
+}
+</style>
+   
+
+
