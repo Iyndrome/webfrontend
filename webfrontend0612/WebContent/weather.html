@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날씨 가져오기</title>
+<!-- jquery 링크 설정 -->
+<script src="js/jquery.js"></script>
+<!-- 사용자 스크립트 -->
+<script>
+	$(document).ready(function(){
+		//자바스크립트를 이용한 스타일 변경 
+		document.getElementById("msg1").style.color='red';
+		document.getElementById("msg1").innerHTML='글자 변경';
+		
+		//jQuery를 이용한 변경
+		$('#msg2').css('color', 'blue');
+		$('#msg2').html('내용변경');
+		
+		//jquery의 이벤트 처리 
+		$('#outer').click(function(){
+			$('outer').css('color', 'red');			
+		});
+		$('#inner').click(function(){
+			$('#inner').css('color', 'blue');
+			//이벤트 버블링을 취소
+			event.stopPropagation();
+	});
+</script>
+</head>
+<body>
+     
+     <p id="msg1">javascript만으로 스타일 변경</p>
+     <p id="msg2">jQuery로 스타일 변경</p>
+     
+     <div id="outer">
+         외부
+     <p id= "inner">내부</p>
+     </div>
+     
+     
+     
+     
+     
+</body>
+</html>
