@@ -1,6 +1,7 @@
 /* CSS 는 HTML에 디자인을 적용 */
 
 /* 선택자{속성:값...} 의 형태로 작성 */
+
 /* body 태그에 적용 */
 body {
 	font-family: Tahoma, Verdana, Geneva, sans-serif;
@@ -44,8 +45,8 @@ a {
 		box-shadow 0.2s;
 }
 
-/* a 태그에 포커스가 오거나 마우스가 올라오면 적용 
-   : 다음에 나오는 것은 가상 선택자, 가상 클래스 */
+/* a 태그에 포커스가 오거나 마우스가 올라오면 적용
+: 다음에 나오는 것은 가상 선택자, 가상 클래스 */
 a:hover, a:focus {
 	background-color: #fdca00;
 	border-color: #fda700;
